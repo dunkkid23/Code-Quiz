@@ -22,19 +22,16 @@
                 <h2 class="qText">What does DOM stand for?</h2>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">Dominant</button>
+                <button type="button" class="btn btn-light no no1 question">Dominant Ole eMily</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light yes question">Document Object Model</button>
+                <button type="button" id="correct1" class="btn btn-light yes question">Document Object Model</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">Dusty Old Mutt</button>
+                <button type="button" class="btn btn-light no no1 question">Dusty Old Mutt</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">Dang Oval Maids</button>
-            </div>
-            <div class="col-12">
-                <button type="button" class="btn btn-lg btn-light nextQuestion hide" id="next">Next Question</button>
+                <button type="button" class="btn btn-light no no1 question">Dang Oval Maids</button>
             </div>
     </div>
     </div>
@@ -45,19 +42,86 @@
                 <h2 class="qText">What form is the result of querySelectorAll?</h2>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">String</button>
+                <button type="button" class="btn btn-light no no2 question">String</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">Boolean</button>
+                <button type="button" class="btn btn-light no no2 question">Boolean</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light no question">Number</button>
+                <button type="button" class="btn btn-light no no2 question">Number</button>
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-light yes question">Array</button>
+                <button type="button" id="correct2" class="btn btn-light yes question">Array</button>
             </div>
+    </div>
+    </div>
+
+    <div class="container hide questionBox" id="questionThree">
+        <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-lg btn-light nextQuestion hide" id="next">Next Question</button>
+                <h2 class="qText">Where in an HTML document do you link an external style sheet?</h2>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no3 question">Trash</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no3 question">Body</button>
+            </div>
+            <div class="col-6">
+                <button type="button" id="correct3" class="btn btn-light yes question">Head</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no3 question">Garbage Disposal</button>
+            </div>
+    </div>
+    </div>
+
+    <div class="container hide questionBox" id="questionFour">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="qText">Web development framework containing CSS & JavaScript-based design templates.</h2>
+            </div>
+            <div class="col-6">
+                <button type="button" id="correct4" class="btn btn-light yes question">Bootstrap</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no4 question">JQuery</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no4 question">Node.js</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no4 question">Altavista</button>
+            </div>
+    </div>
+    </div>
+
+    <div class="container hide questionBox" id="questionFive">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="qText">What does HTML stand for?</h2>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no5 question">Hyperthread Markup Language</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no5 question">Human-Tested Mineral Lover</button>
+            </div>
+            <div class="col-6">
+                <button type="button" id="correct5" class="btn btn-light yes question">Hypertext Markup Language</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-light no no5 question">Hunky Trans Men & Ladies</button>
+            </div>
+    </div>
+    </div>
+
+    <div class="container hide questionBox" id="resultScreen">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="qText">You've completed your examination!</h2>
+                <h3>Correct Questions:</h3> <h4 id="correctNum"></h4>
+                <h3>Incorrect Questions:</h3> <h4 id="incorrectNum"></h4>
             </div>
     </div>
     </div>
