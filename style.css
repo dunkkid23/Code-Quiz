@@ -1,9 +1,9 @@
 body {
-    background: #fbdcc4;
+    background: #463333;
 }
 
 h1 {
-    color: #7d0633;
+    color: #ebd4d4;
     text-align: center;
     margin-top: 50px;
     font-size: 1.9rem;
@@ -12,6 +12,10 @@ h1 {
 h2 {
     text-align: center;
     margin-bottom: 50px;
+}
+
+h2, h3, h4 {
+    color: #fff0f0;
 }
 
 .btn {
@@ -26,16 +30,26 @@ h2 {
     background: #cd0a0a;
 }
 
-.pad {
-    margin: 50px 0 30px 0;
-}
-
 .hide {
     display: none;
 }
 
 .questionBox {
     margin: auto;
-    width: 20%
-    border: solid 10px;
+    width: 40%;
+    height: 600px;
+    border: solid 1px #fff0f0;
+    background: #835858;
+}
+
+#begin {
+    text-align: center;
+}
+
+#countdown {
+    margin: 50px 0 30px 0;
+    text-align: center;
+    font-weight: bold;
+    height: 50px;
+    color: #fff0f0;
 }
