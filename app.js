@@ -69,6 +69,7 @@ $(".answer").click(function () {
     } else {
         alert("Incorrect!");
         scoreIncorrect++;
+        timeleft -= 5;
         updateScore();
     }
     currentQ++;
