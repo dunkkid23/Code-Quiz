@@ -1,9 +1,4 @@
-body {
-    background: #463333;
-}
-
 h1 {
-    color: #ebd4d4;
     text-align: center;
     margin-top: 50px;
     font-size: 1.9rem;
@@ -12,10 +7,6 @@ h1 {
 h2 {
     text-align: center;
     margin-bottom: 50px;
-}
-
-h2, h3, h4 {
-    color: #fff0f0;
 }
 
 .btn {
@@ -36,10 +27,10 @@ h2, h3, h4 {
 
 .questionBox {
     margin: auto;
-    width: 40%;
-    height: 600px;
-    border: solid 1px #fff0f0;
-    background: #835858;
+    width: 55%;
+    height: 500px;
+    border: solid 1px #3b3b3b;
+    background: #99b898;
 }
 
 #begin {
@@ -51,5 +42,4 @@ h2, h3, h4 {
     text-align: center;
     font-weight: bold;
     height: 50px;
-    color: #fff0f0;
 }
