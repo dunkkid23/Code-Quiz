@@ -14,8 +14,11 @@
 <body>
 
     <nav class="navbar">
-        <span class="navbar-text"><h1>Web Development Coding Quiz</h1></span>
-        <span class="navbar-text countdown"></span>
+        <span class="navbar-text">
+            <h1>Web Development Coding Quiz</h1>
+        </span>
+        <span class="navbar-text" id="countdown"></span>
+        <span class="navbar-text" id="currentScore"></span>
     </nav>
 
 
@@ -49,9 +52,7 @@
     <div class="container jumbotron hide questionBox" id="resultScreen">
         <div class="row">
             <div class="col-12">
-                <h2 class="qText">You've completed your examination!</h2>
-                <h3>Score: </h3>
-                <h4 id="score"></h4>
+                <h2 id="resultText">You've completed your examination!</h2>
                 <input type="text" id="initialText">
                 <input type="submit" id="initialSubmit">
             </div>
@@ -71,7 +72,6 @@
 
 
     <script src="app.js"></script>
-    <script src="questions.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

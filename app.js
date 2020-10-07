@@ -1,28 +1,8 @@
 var scoreCorrect = 0;
 var scoreIncorrect = 0;
+var score = 0;
 var currentQ = 0;
-
-
-
-// var downloadTimer = setInterval(function () {
-//     if (timeleft <= 0) {
-//         clearInterval(downloadTimer);
-//         document.getElementById("countdown").innerHTML = "";
-//         for (var i = 0; i < qNumbers.length; i++) {
-//             document.getElementById(qNumbers[i]).classList.add("hide");
-//             document.getElementById("resultScreen").classList.remove("hide");
-//         }
-//     } else {
-//         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-//     }
-//     timeleft -= 1;
-// }, 1000);
-
-
-
-// SO instead of this messy fucking code, I should be using an array for the questions
-// with a section under each question for the actual question, the answers, and the correct answer
-// have the HTML populate from the JS questions array
+var timeleft = 45;
 
 var quizQuestions = [{
     question: "What does DOM stand for?",
@@ -49,7 +29,21 @@ var quizQuestions = [{
 $("#startBtn").click(function () {
     $("#begin").addClass("hide");
     $("#questionDiv").removeClass("hide");
+    $("#currentScore").text("Score: " + score);
     populateQuiz();
+    var downloadTimer = setInterval(function() {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            $("#resultText").text("You've run out of time!");
+            $("#countdown").text("");
+            $("#questionDiv").addClass("hide");
+            $("#resultScreen").removeClass("hide");
+            $("#countdown").addClass("hide");
+        } else {
+            $("#countdown").text(timeleft + " seconds remaining");
+        }
+        timeleft -= 1;
+    }, 1000);
 });
 
 function populateQuiz() {
@@ -60,17 +54,28 @@ function populateQuiz() {
         $("#c").text(quizQuestions[currentQ].answers[2]);
         $("#d").text(quizQuestions[currentQ].answers[3]);
     } else if (currentQ >= quizQuestions.length) {
+        $("#resultText").text("You've completed the quiz!");
         $("#questionDiv").addClass("hide");
         $("#resultScreen").removeClass("hide");
     }
 }
 
 $(".answer").click(function () {
+    $("#currentScore").text("Score: " + score);
     if ($(this).text() === quizQuestions[currentQ].correctAnswer) {
         alert("Correct!");
+        scoreCorrect++;
+        updateScore();
     } else {
         alert("Incorrect!");
+        scoreIncorrect++;
+        updateScore();
     }
     currentQ++;
     populateQuiz();
 });
+
+function updateScore(){
+    score = (scoreCorrect * 5) - (scoreIncorrect *3);
+    $("#currentScore").text("Score: " + score);
+}
