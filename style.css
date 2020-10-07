@@ -39,6 +39,8 @@ nav {
     height: 50px;
     background: #99b898;
     text-align: center;
+    border-top: solid 1px #3b3b3b;
+    border-bottom: solid 1px #3b3b3b;
 }
 
 .fab {
