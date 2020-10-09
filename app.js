@@ -2,7 +2,7 @@ var scoreCorrect = 0;
 var scoreIncorrect = 0;
 var score = 0;
 var currentQ = 0;
-var timeleft = 45;
+var timeleft = 1;
 
 var quizQuestions = [{
     question: "What does DOM stand for?",
@@ -31,7 +31,7 @@ $("#startBtn").click(function () {
     $("#questionDiv").removeClass("hide");
     $("#currentScore").text("Score: " + score);
     populateQuiz();
-    var downloadTimer = setInterval(function() {
+    var downloadTimer = setInterval(function () {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             $("#resultText").text("You've run out of time!");
@@ -57,6 +57,7 @@ function populateQuiz() {
         $("#resultText").text("You've completed the quiz!");
         $("#questionDiv").addClass("hide");
         $("#resultScreen").removeClass("hide");
+        $("#countdown").addClass("hide");
     }
 }
 
@@ -76,7 +77,54 @@ $(".answer").click(function () {
     populateQuiz();
 });
 
-function updateScore(){
-    score = (scoreCorrect * 5) - (scoreIncorrect *3);
+function updateScore() {
+    score = (scoreCorrect * 5) - (scoreIncorrect * 3);
     $("#currentScore").text("Score: " + score);
 }
+
+function setScore() {
+    var initials = $("#initialText").val();
+    if (initials === "") {
+        alert("Please enter your initials, idiot!");
+    } else if (initials !== "") {
+        var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+        var newScore = {
+            score: score,
+            initials: initials
+        };
+        highscores.push(newScore);
+        localStorage.setItem("highscores", JSON.stringify(highscores));
+        $("#resultScreen").addClass("hide");
+        $("#highScoreDiv").removeClass("hide");
+        highscores.sort(function (a, b) {
+            return b.score - a.score
+        })
+        for (var i = 0; i < 3; i++) {
+            if (highscores.length > 3) {
+                highscores.splice(0);
+            }
+            var newNameLi = $("<li></li>");
+            newNameLi.text(highscores[i].initials + ": " + highscores[i].score);
+            $("#scoresList").append(newNameLi);
+        }
+    }
+}
+
+$("#initialSubmit").click(function () {
+    setScore();
+});
+
+$("#restart").click(function () {
+    $("#highScoreDiv").addClass("hide");
+    $("#begin").removeClass("hide");
+    currentQ = 0;
+    score = 0;
+    scoreCorrect = 0;
+    scoreIncorrect = 0;
+    updateScore();
+});
+
+$("#reset").click(function () {
+    localStorage.clear();
+    $("#scoresList").html("");
+});
