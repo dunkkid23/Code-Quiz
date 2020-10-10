@@ -100,12 +100,12 @@ function setScore() {
             return b.score - a.score
         })
         for (var i = 0; i < 3; i++) {
-            if (highscores.length > 3) {
-                highscores.splice(0);
-            }
             var newNameLi = $("<li></li>");
-            newNameLi.text(highscores[i].initials + ": " + highscores[i].score);
-            $("#scoresList").append(newNameLi);
+            var newScoreLi = $("<li></li>");
+            newNameLi.text(highscores[i].initials);
+            $("#highscore-initials").append(newNameLi);
+            newScoreLi.text(highscores[i].score);
+            $("#highscore-score").append(newScoreLi);
         }
     }
 }
@@ -126,5 +126,6 @@ $("#restart").click(function () {
 
 $("#reset").click(function () {
     localStorage.clear();
-    $("#scoresList").html("");
+    $("#highscore-initials").html("");
+    $("#highscore-score").html("");
 });
