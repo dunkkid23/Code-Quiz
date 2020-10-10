@@ -99,13 +99,10 @@ function setScore() {
         highscores.sort(function (a, b) {
             return b.score - a.score
         })
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < highscores.length; i++) {
             var newNameLi = $("<li></li>");
-            var newScoreLi = $("<li></li>");
-            newNameLi.text(highscores[i].initials);
+            newNameLi.text(highscores[i].initials + ": " + highscores[i].score + " points");
             $("#highscore-initials").append(newNameLi);
-            newScoreLi.text(highscores[i].score);
-            $("#highscore-score").append(newScoreLi);
         }
     }
 }

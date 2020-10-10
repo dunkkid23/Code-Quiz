@@ -25,9 +25,10 @@
 
 
     <div id="begin" class="questionBox jumbotron">
-        <h3>Instructions: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</h3>
+        <h3>This quiz consists of five nearly impossible questions, so good luck! Every correct answer will award you
+            five points, while every incorrect answer will deduct three points as well as five seconds from the timer.
+            After you complete the quiz, feel free to enter your initials and try to do better next time. Good luck!
+        </h3>
         <button type="button" id="startBtn" class="btn btn-lg btn-light">Begin!</button>
     </div>
 
@@ -63,12 +64,14 @@
 
     <div id="highScoreDiv" class="container jumbotron hide questionBox">
         <h2>Leaderboard:</h2>
-        <div id="highscore-initials">NAME:</div>
-        <div id="highscore-score">SCORE:</div>
-        <div id="endbuttons">
-        <button type="button" id="restart" class="btn btn-light endbtns">Play Again?</button>
-        <button type="button" id="reset" class="btn btn-light endbtns">Reset Leaderboard</button>
-    </div></div>
+        <div class="row">
+            <div id="highscore-initials" class="col-12"></div>
+            <div id="endbuttons">
+                <button type="button" id="restart" class="btn btn-light endbtns">Play Again?</button>
+                <button type="button" id="reset" class="btn btn-light endbtns">Reset Leaderboard</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer no-gutters">
         <a href="https://www.facebook.com/ethan.mcdowell/"><i class="fab fa-facebook-square fa-2x"></i></a>
