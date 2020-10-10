@@ -29,6 +29,7 @@ var quizQuestions = [{
 $("#startBtn").click(function () {
     $("#begin").addClass("hide");
     $("#questionDiv").removeClass("hide");
+    $("#countdown").removeClass("hide");
     $("#currentScore").text("Score: " + score);
     populateQuiz();
     var downloadTimer = setInterval(function () {
@@ -114,6 +115,7 @@ $("#initialSubmit").click(function () {
 $("#restart").click(function () {
     $("#highScoreDiv").addClass("hide");
     $("#begin").removeClass("hide");
+    timeleft = 45;
     currentQ = 0;
     score = 0;
     scoreCorrect = 0;
