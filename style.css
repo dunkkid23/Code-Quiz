@@ -87,6 +87,11 @@ a:hover {
     left: 50%;
 }
 
+#endtext {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+}
+
 #highscore-initials{
     float: left;
     padding-left: 9.5rem;
