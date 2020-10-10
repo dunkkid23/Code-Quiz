@@ -2,7 +2,7 @@ var scoreCorrect = 0;
 var scoreIncorrect = 0;
 var score = 0;
 var currentQ = 0;
-var timeleft = 1;
+var timeleft = 45;
 
 var quizQuestions = [{
     question: "What does DOM stand for?",
