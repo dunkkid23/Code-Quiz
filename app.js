@@ -40,6 +40,8 @@ $("#startBtn").click(function () {
             $("#questionDiv").addClass("hide");
             $("#resultScreen").removeClass("hide");
             $("#countdown").addClass("hide");
+        } else if (currentQ >= quizQuestions.length) {
+            clearInterval(downloadTimer);
         } else {
             $("#countdown").text(timeleft + " seconds remaining");
         }
